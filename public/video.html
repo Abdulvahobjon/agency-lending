@@ -87,7 +87,6 @@
 
       const checkVideoTime = () => {
         const currentTime = player.getCurrentTime();
-        console.log(`Current video time: ${currentTime} seconds`);
         const currentMinute = Math.floor(currentTime / 60);
         if (currentMinute !== lastShownMinute && currentMinute % 5 === 0) {
           openModal();
