@@ -9,18 +9,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <section class="py-20">
-    <div class="max-w-full mb-10 md:max-w-[980px] mx-auto rounded-lg overflow-hidden grid grid-cols-1">
-      <h1 class="text-[64px] mb-5 uppercase font-semibold">Bu sahifani yopmang, bo'lmasa bu videoni butun umrga
-        yo'qotasiz.</h1>
-      <div class="video-container">
-        <iframe id="youtube-video" class="w-2/3 min-h-[400px]"
-          src="https://www.youtube.com/embed/RkliUUfvpGY?enablejsapi=1" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<body style="background-image: url(./img/img.png); background-size: cover; background-color: black;"
+  class="flex items-center justify-center min-h-screen">
+   
+    <div class="max-w-full flex items-center justify-center flex-col mb-10 md:max-w-[980px] mx-auto rounded-lg overflow-hidden">
+      <h2 class="font-bold text-white text-center text-[25px] lg:text-[40px] leading-tight uppercase md:mb-[25px] mb-10">Bu sahifani <span
+        class="text-[#FF9900]">yopmang</span> , bo'lmasa bu videoni butun umrga <span
+        class="text-[#FF0000]">yo'qotasiz.</span> </h2>
+      <img src="./img/Line.svg" class="mb-10" alt="">
+      <div class="video-container flex w-full px-5 ">
+      
+          <iframe class="max-w-[749px] w-full h-[250px] md:h-[388px] object-contain"  src="https://www.youtube.com/embed/KOSRcXDqUlI?si=NEDO47j0gLHbDLZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
+
+
+
+    <!-- modal commid -->
     <div class="modal fixed top-0 left-0 w-full h-screen hidden">
       <div class="flex items-center justify-center w-full h-screen relative">
         <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
