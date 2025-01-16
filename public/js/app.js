@@ -8,4 +8,9 @@ closeBtn.addEventListener('click' , ()=>{
 setTimeout(function () {
     form.classList.remove('hidden')
     form.classList.add('flex')
+
+    setInterval(() => {
+        form.classList.remove('hidden')
+        form.classList.add('flex')
+    }, 120000);
 }, 5000)
