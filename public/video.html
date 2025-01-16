@@ -2,49 +2,122 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Modal Example</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-   <section class="py-20">
-    <div class="max-w-full mb-10 md:max-w-[980px] mx-auto  rounded-lg overflow-hidden grid grid-cols-1">
-        <h1 class="text-[64px] mb-5 uppercase font-semibold">Bu sahifani yopmang , bo'lmasa bu videoni butun umrga yo'qotasiz.</h1>
-        <iframe  class="w-2/3 min-h-[400px]" src="https://www.youtube.com/embed/RkliUUfvpGY?si=jaKsWJ4FuD4xAEBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <section class="py-20">
+    <div class="max-w-full mb-10 md:max-w-[980px] mx-auto rounded-lg overflow-hidden grid grid-cols-1">
+      <h1 class="text-[64px] mb-5 uppercase font-semibold">Bu sahifani yopmang, bo'lmasa bu videoni butun umrga
+        yo'qotasiz.</h1>
+      <div class="video-container">
+        <iframe id="youtube-video" class="w-2/3 min-h-[400px]"
+          src="https://www.youtube.com/embed/RkliUUfvpGY?enablejsapi=1" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
-    <div class="modal fixed top-0 left-0 w-full h-full hidden items-center justify-center bg-black/80">
-        <form id="form" class="relative   z-10 bg-white w-[320px] md:max-w-sm md:w-full mx-auto flex flex-col max-h-[600px] p-10">
-            <button type="button" id="close" class="flex absolute top-2 right-2"><svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
-            <div class="mb-5 w-full grid">
-              <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Ismingiz:</label>
-              <input type="text" id="name"
-                class="bg-gray-50 w-full block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-2.5"
-                placeholder="name@flowbite.com" required />
-            </div>
-            <div class="mb-5 w-full grid">
-              <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Telefon nomeriz:</label>
-              <input type="number" id="password"
-                class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                required />
-            </div>
-            <div class="mb-5 w-full grid">
-              <label for="jop" class="block mb-2 text-sm font-medium text-gray-900 ">Sohangiz:</label>
-              <input type="text" id="jop"
-                class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                required />
-            </div>
-      
-            <button type="submit"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-          </form>
-    </div>
-   </section>
+    <div class="modal fixed top-0 left-0 w-full h-screen hidden">
+      <div class="flex items-center justify-center w-full h-screen relative">
+        <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
+        <form id="form"
+          class="relative z-20 bg-white w-[320px] md:max-w-sm md:w-full mx-auto my-auto flex flex-col max-h-[600px] p-10">
+          <button type="button" id="close" class="flex absolute top-2 right-2">
+            <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+            </svg>
+          </button>
+          <div class="mb-5 w-full grid">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Ismingiz:</label>
+            <input type="text" id="name"
+              class="bg-gray-50 w-full block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+              placeholder="name@flowbite.com" required />
+          </div>
+          <div class="mb-5 w-full grid">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Telefon nomeriz:</label>
+            <input type="number" id="password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              required />
+          </div>
+          <div class="mb-5 w-full grid">
+            <label for="jop" class="block mb-2 text-sm font-medium text-gray-900">Sohangiz:</label>
+            <input type="text" id="jop"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              required />
+          </div>
 
-   <script src="./js/app.js"></script>
+          <button type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.querySelector('.modal');
+      const closeButton = document.getElementById('close');
+      const overlay = document.querySelector('.overlay');
+      let player;
+      let intervalId = null;
+      let lastShownMinute = 0;
+
+      overlay.addEventListener("click", function () {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      })
+
+
+      const openModal = () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+
+      closeButton.addEventListener('click', closeModal);
+
+      const checkVideoTime = () => {
+        const currentTime = player.getCurrentTime();
+        console.log(`Current video time: ${currentTime} seconds`);
+        const currentMinute = Math.floor(currentTime / 60);
+        if (currentMinute !== lastShownMinute && currentMinute % 5 === 0) {
+          openModal();
+          lastShownMinute = currentMinute;
+        }
+      };
+
+      const onYouTubeIframeAPIReady = () => {
+        player = new YT.Player('youtube-video', {
+          events: {
+            'onStateChange': (event) => {
+              if (event.data === YT.PlayerState.PLAYING) {
+                if (!intervalId) {
+                  intervalId = setInterval(checkVideoTime, 1000);
+                }
+              } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                clearInterval(intervalId);
+                intervalId = null;
+              }
+            }
+          }
+        });
+      };
+
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+    });
+  </script>
 </body>
 
 </html>
