@@ -101,6 +101,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
         console.log(result); // Log the response
         modal.classList.add("hidden");
         modal.classList.remove("flex");
+        document.getElementById("form").reset();
       })
       .catch((error) => {
         console.error("Error:", error);

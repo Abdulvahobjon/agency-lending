@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
           modal.classList.add("hidden");
           modal.classList.remove("flex");
           window.location = "https://asoschilar.uz/video.html";
+          document.getElementById("form").reset();
         })
         .catch((error) => {
           console.error("Error:", error);
