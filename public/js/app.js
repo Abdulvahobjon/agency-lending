@@ -35,6 +35,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form from submitting
 
   // Validate input fields
+  const loader = document.querySelector("#loader");
   const name = document.getElementById("name").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const business = document.getElementById("jop").value.trim();
@@ -78,8 +79,9 @@ document.getElementById("form").addEventListener("submit", function (event) {
     isValid = false;
   }
 
-
   if (isValid) {
+    loader.classList.remove("hidden");
+    loader.classList.add("flex");
     const data = new FormData();
     data.append("Ismingiz", name);
     data.append("Telefon", phone);
@@ -97,11 +99,20 @@ document.getElementById("form").addEventListener("submit", function (event) {
       .then((response) => response.json())
       .then((result) => {
         console.log(result); // Log the response
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
         alert("Ma'lumot yuborildi!");
       })
       .catch((error) => {
         console.error("Error:", error);
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
         alert("Xatolik yuz berdi, iltimos qayta urinib ko'ring.");
+      })
+      .finally(() => {
+        // Hide loader
+        loader.classList.add("hidden");
+        loader.classList.remove("flex");
       });
   }
 });

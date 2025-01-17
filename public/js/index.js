@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => {
           console.error("Error:", error);
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
           alert("Xatolik yuz berdi, iltimos qayta urinib ko'ring.");
         })
         .finally(() => {
