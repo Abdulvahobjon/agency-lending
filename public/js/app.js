@@ -2,6 +2,12 @@ const modal = document.querySelector(".modal");
 let btn = document.querySelector("#btn");
 let close = document.querySelector("#close");
 
+const overlay = document.querySelector(".overlay");
+
+overlay.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+});
 btn.addEventListener("click", function () {
   modal.classList.remove("hidden");
   modal.classList.add("flex");

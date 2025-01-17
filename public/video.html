@@ -51,8 +51,9 @@
   </div>
 
   <!-- modal commid -->
-  <div class="modal fixed top-0 left-0 w-full h-screen hidden">
-    <div class="flex items-center justify-center w-full h-screen relative px-5">
+  <div class="modal fixed top-0 left-0 w-full h-screen hidden items-center justify-center">
+    <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
+    <div class="relative px-5">
       <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
       <form
         action="https://script.google.com/macros/s/AKfycbxcG93ncf2IKPKaC36qRNkaR88pXqDTQwnhypMKqvoYagZu3LDJUjYDX7TFJIkhdyEIYA/exec"
@@ -118,7 +119,8 @@
   </div>
 
 
-  <div id="loader" class="w-full h-screen bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 z-40 hidden items-center justify-center">
+  <div id="loader"
+    class="w-full h-screen bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 z-40 hidden items-center justify-center">
     <div class="loader">
       <div class="bar1"></div>
       <div class="bar2"></div>
