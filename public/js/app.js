@@ -101,7 +101,6 @@ document.getElementById("form").addEventListener("submit", function (event) {
         console.log(result); // Log the response
         modal.classList.add("hidden");
         modal.classList.remove("flex");
-        alert("Ma'lumot yuborildi!");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -110,7 +109,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
         alert("Xatolik yuz berdi, iltimos qayta urinib ko'ring.");
       })
       .finally(() => {
-        // Hide loader
+        alert("Ma'lumot yuborildi!");
         loader.classList.add("hidden");
         loader.classList.remove("flex");
       });
