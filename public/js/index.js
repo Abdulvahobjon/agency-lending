@@ -5,7 +5,7 @@ btn.addEventListener('click' , function(){
 modal.classList.remove("hidden")
 // modal.classList.add("flex")
 })
-
+AOS.init();
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
   const closeButton = document.getElementById('close');
