@@ -2,7 +2,7 @@ const modal = document.querySelector(".modal");
 let btn = document.querySelector("#btn");
 const overlay = document.querySelector(".overlay");
 
-<<<<<<< HEAD
+
 btn.addEventListener('click' , function(){
 modal.classList.remove("hidden")
 // modal.classList.add("flex")
@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tag.src = "https://www.youtube.com/iframe_api";
   document.body.appendChild(tag);
   window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-=======
 overlay.addEventListener("click", function () {
   modal.classList.add("hidden");
   modal.classList.remove("flex");
@@ -167,5 +166,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
   });
->>>>>>> 373f170d9f1042a216cb44a369910c1c2bf5cf9e
 });
