@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(data);
           modal.classList.add("hidden");
           modal.classList.remove("flex");
-          window.location = "http://127.0.0.1:5502/public/video.html";
+          window.location = "https://asoschilar.uz/video.html";
         })
         .catch((error) => {
           console.error("Error:", error);
