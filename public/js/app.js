@@ -1,4 +1,10 @@
     const modal = document.querySelector('.modal');
+    let btn  = document.querySelector("#btn")
+
+btn.addEventListener('click' , function(){
+    modal.classList.remove("hidden")
+    // modal.classList.add("flex")
+})
     const closeButton = document.getElementById('close');
     const video = document.querySelector('iframe');
     let intervalId = null;
@@ -57,3 +63,5 @@ const startModalTimer = () => {
         openModal();
     }, 300); // 300000 ms = 5 daqiqa
 };
+
+
