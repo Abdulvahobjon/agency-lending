@@ -7,20 +7,22 @@
   <title>Asoschilar</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2089287888167755');
     fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2089287888167755&ev=PageView&noscript=1"
-    /></noscript>
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2089287888167755&ev=PageView&noscript=1" /></noscript>
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -42,49 +44,73 @@
             class="text-[#FF9900]">metrikalardan</span> bittasini ko'rsatkichini oshirish orqali sotuvlaringizni <span
             class="text-[#FF9900]">2X</span> gacha oshirishingi mumkin)</p>
         <img class=" md:hidden" src="./img/person.png" alt="person">
-        <button id="btn" class="py-5 -mt-4 md:mt-0 pt-[18px] capitalize px-9 bg-[#FF9900] inline-block rounded-xl font-semibold text-2xl leading-6 text-[#000000]" href="./video.html">videoni ko’rish</button>
+        <button id="btn"
+          class="py-5 -mt-4 md:mt-0 pt-[18px] capitalize px-9 bg-[#FF9900] inline-block rounded-xl font-semibold text-2xl leading-6 text-[#000000]"
+          href="./video.html">videoni ko’rish</button>
       </div>
       <img class="hidden md:block" src="./img/person.png" alt="person">
 
-    </section>
-    <div class="modal fixed top-0 left-0 w-full h-screen hidden">
-      <div class="flex items-center justify-center w-full h-screen relative px-5">
-        <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
-        <form id="form" class="relative z-20 bg-white max-w-[450px]  md:w-full mx-auto my-auto flex flex-col  p-10">
-          <button type="button" id="close" class="flex absolute top-2 right-2">
-            <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-              <path
-                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-            </svg>
-          </button>
-          <div class="mb-5 w-full grid">
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Ismingiz:</label>
-            <input type="text" id="name" name="Ismingiz"
-              class="bg-gray-50 w-full block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
-              placeholder="Ismingiz..." required />
-          </div>
-          <div class="mb-5 w-full grid">
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Telefon raqamingiz:</label>
-            <input type="number" id="password" name="Telefon"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              required placeholder="Telefon raqamingiz..." />
-          </div>
-          <div class="mb-5 w-full grid">
-            <label for="jop" class="block mb-2 text-sm font-medium text-gray-900">Biznesingiz nomi va faoliyat
-              sohangiz:</label>
-            <input type="text" id="jop" name="Biznesingiz nomi"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              required placeholder="Biznesingiz nomi va faoliyat sohangiz..." />
-          </div>
-         
-          <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-        </form>
-      </div>
+  </section>
+  <div class="modal fixed top-0 left-0 w-full h-screen hidden">
+    <div class="flex items-center justify-center w-full h-screen relative px-5">
+      <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
+      <form id="form" class="relative z-20 bg-white max-w-[450px] md:w-full mx-auto my-auto flex flex-col p-10">
+        <button type="button" id="close" class="flex absolute top-2 right-2">
+          <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+          </svg>
+        </button>
+        <div class="mb-5 w-full grid">
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Ismingiz:</label>
+          <input type="text" id="name" name="Ismingiz"
+            class="bg-gray-50 w-full block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+            placeholder="Ismingiz..." />
+          <span id="name-error" class="text-red-500 text-sm"></span>
+        </div>
+        <div class="mb-5 w-full grid">
+          <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Telefon raqamingiz:</label>
+          <input type="text" id="phone" name="Telefon"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Telefon raqamingiz..." />
+          <span id="phone-error" class="text-red-500 text-sm"></span>
+        </div>
+        <div class="mb-5 w-full grid">
+          <label for="jop" class="block mb-2 text-sm font-medium text-gray-900">Biznesingiz nomi va faoliyat
+            sohangiz:</label>
+          <input type="text" id="jop" name="Biznesingiz nomi"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Biznesingiz nomi va faoliyat sohangiz..." />
+          <span id="jop-error" class="text-red-500 text-sm"></span>
+        </div>
+        <button type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ro'yhatdan O'tish</button>
+      </form>
     </div>
+<<<<<<< HEAD
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+=======
+  </div>
+>>>>>>> 373f170d9f1042a216cb44a369910c1c2bf5cf9e
 
-<script src="./js/index.js"></script>
+  <div id="loader" class="w-full h-screen bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 z-40 hidden items-center justify-center">
+    <div class="loader">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      <div class="bar4"></div>
+      <div class="bar5"></div>
+      <div class="bar6"></div>
+      <div class="bar7"></div>
+      <div class="bar8"></div>
+      <div class="bar9"></div>
+      <div class="bar10"></div>
+      <div class="bar11"></div>
+      <div class="bar12"></div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

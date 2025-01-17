@@ -7,7 +7,7 @@
   <title>Asoschilar</title>
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Meta Pixel Code -->
+ <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,6 +24,7 @@
   src="https://www.facebook.com/tr?id=2089287888167755&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -37,26 +38,27 @@
       Bu sahifani <span class="text-[#FF9900]">yopmang</span> , bo'lmasa bu videoni butun umrga <span
         class="text-[#FF0000]">yo'qotasiz.</span> </h2>
     <img src="./img/Line.svg" class="mb-10 h-10 md:h-auto" alt="">
-    <div class="video-container flex justify-center w-full">
 
-      <iframe class="max-w-[749px] w-full h-[250px] md:h-[388px] object-contain"
+    <div class="video-container flex justify-center w-full">
+      <iframe id="youtube-video" class="max-w-[749px] w-full h-[250px] md:h-[388px] object-contain"
         src="https://www.youtube.com/embed/KOSRcXDqUlI?si=NEDO47j0gLHbDLZE" title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+
     <button id="btn"
       class="py-5 -mt-4 md:mt-0 pt-[18px] capitalize px-9 bg-[#FF9900] inline-block rounded-xl font-semibold text-2xl leading-6 text-[#000000]"
       href="./video.html">Konsultatsiya Olish</button>
-
   </div>
 
-
-
   <!-- modal commid -->
-  <div class="modal fixed top-0 left-0 w-full h-screen hidden">
-    <div class="flex items-center justify-center w-full h-screen relative px-5">
+  <div class="modal fixed top-0 left-0 w-full h-screen hidden items-center justify-center">
+    <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
+    <div class="relative px-5">
       <div class="overlay absolute top-0 left-0 w-full h-screen bg-black/80"></div>
-      <form id="form" class="relative z-20 bg-white max-w-[450px]  md:w-full mx-auto my-auto flex flex-col  p-10">
+      <form
+        action="https://script.google.com/macros/s/AKfycbxcG93ncf2IKPKaC36qRNkaR88pXqDTQwnhypMKqvoYagZu3LDJUjYDX7TFJIkhdyEIYA/exec"
+        id="form" class="relative z-20 bg-white max-w-[450px] md:w-full mx-auto my-auto flex flex-col p-10">
         <button type="button" id="close" class="flex absolute top-2 right-2">
           <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
             <path
@@ -67,112 +69,74 @@
           <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Ismingiz:</label>
           <input type="text" id="name" name="Ismingiz"
             class="bg-gray-50 w-full block border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
-            placeholder="Ismingiz..." required />
+            placeholder="Ismingiz..." />
+          <span class="error-message text-red-500 text-sm"></span>
         </div>
         <div class="mb-5 w-full grid">
-          <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Telefon raqamingiz:</label>
-          <input type="number" id="password" name="Telefon"
+          <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Telefon raqamingiz:</label>
+          <input type="text" id="phone" name="Telefon"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            required placeholder="Telefon raqamingiz..." />
+            placeholder="Telefon raqamingiz..." maxlength="15" />
+          <span class="error-message text-red-500 text-sm"></span>
         </div>
         <div class="mb-5 w-full grid">
           <label for="jop" class="block mb-2 text-sm font-medium text-gray-900">Biznesingiz nomi va faoliyat
             sohangiz:</label>
           <input type="text" id="jop" name="Biznesingiz nomi"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            required placeholder="Biznesingiz nomi va faoliyat sohangiz..." />
+            placeholder="Biznesingiz nomi va faoliyat sohangiz..." />
+          <span class="error-message text-red-500 text-sm"></span>
         </div>
         <div class="mb-5 w-full grid">
-          <label for="jop" class="block mb-2 text-sm font-medium text-gray-900">Marketingdagi sizni qiynayotgan muammo:</label>
-          <input type="text" id="jop" name="Marketingdagi sizni qiynayotgan muammo:"
+          <label for="jopIsue" class="block mb-2 text-sm font-medium text-gray-900">Marketingdagi sizni qiynayotgan
+            muammo:</label>
+          <input type="text" id="jopIsue" name="Marketingdagi sizni qiynayotgan muammo:"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            required placeholder="Marketingdagi sizni qiynayotgan muammo...">
+            placeholder="Marketingdagi sizni qiynayotgan muammo..." />
+          <span class="error-message text-red-500 text-sm"></span>
         </div>
         <div class="mb-5 w-full grid items-start">
           <label for="" class="block mb-2 text-sm font-medium text-gray-900">Oldin marketing agentliklari bilan
             ishlaganmisiz:</label>
           <div class="flex gap-5">
             <div>
-              <label for="jop2">Ha</label> <input name="ishlaganmisiz" type="radio" id="jop2"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
-                required placeholder="Biznesingiz nomi va faoliyat sohangiz..." />
+              <label for="jop2">Ha</label>
+              <input name="ishlaganmisiz" type="radio" id="yes" name="ha"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5" />
             </div>
             <div>
-              <label for="jop1">Yo'q</label> <input name="ishlaganmisiz" type="radio" id="jop1"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
-                required placeholder="Biznesingiz nomi va faoliyat sohangiz..." />
+              <label for="jop1">Yo'q</label>
+              <input name="ishlaganmisiz" type="radio" id="no" name="no"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5" />
             </div>
           </div>
+          <span class="error-message-checkbox text-red-500 text-sm"></span>
         </div>
 
-
         <button type="submit"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Yuborish</button>
       </form>
     </div>
   </div>
-  </section>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.querySelector('.modal');
-      const closeButton = document.getElementById('close');
-      const overlay = document.querySelector('.overlay');
-      let player;
-      let intervalId = null;
-      let lastShownMinute = 0;
-
-      overlay.addEventListener("click", function () {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      })
 
 
-      const openModal = () => {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      };
-
-      const closeModal = () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      };
-
-      closeButton.addEventListener('click', closeModal);
-
-      const checkVideoTime = () => {
-        const currentTime = player.getCurrentTime();
-        const currentMinute = Math.floor(currentTime / 60);
-        if (currentMinute !== lastShownMinute && currentMinute % 5 === 0) {
-          openModal();
-          lastShownMinute = currentMinute;
-        }
-      };
-
-      const onYouTubeIframeAPIReady = () => {
-        player = new YT.Player('youtube-video', {
-          events: {
-            'onStateChange': (event) => {
-              if (event.data === YT.PlayerState.PLAYING) {
-                if (!intervalId) {
-                  intervalId = setInterval(checkVideoTime, 1000);
-                }
-              } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-                clearInterval(intervalId);
-                intervalId = null;
-              }
-            }
-          }
-        });
-      };
-
-      const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      document.body.appendChild(tag);
-      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-    });
-  </script>
-
+  <div id="loader"
+    class="w-full h-screen bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 z-40 hidden items-center justify-center">
+    <div class="loader">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      <div class="bar4"></div>
+      <div class="bar5"></div>
+      <div class="bar6"></div>
+      <div class="bar7"></div>
+      <div class="bar8"></div>
+      <div class="bar9"></div>
+      <div class="bar10"></div>
+      <div class="bar11"></div>
+      <div class="bar12"></div>
+    </div>
+  </div>
   <script src="./js/app.js"></script>
 </body>
 
