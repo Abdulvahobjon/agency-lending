@@ -12,7 +12,7 @@ btn.addEventListener("click", function () {
   // modal.classList.add("flex")
 });
 
-const url = `https://script.google.com/macros/s/AKfycbyKwNkLOENB0SXrnLHxQEQGfsDHCtiKm9MdxOkPruLtN9ykrcm2DigALfkXMv1fBKqcQA/exec`;
+const url = `https://script.google.com/macros/s/AKfycbz_fVuhlrKPD7NERctiv3MT4Ho7Qt0WzwT9m2J8IqEwOhRQ7bP27pgn57z-Oa9DjlRZyA/exec`;
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("phone").addEventListener("input", function (event) {
