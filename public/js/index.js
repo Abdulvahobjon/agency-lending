@@ -19,11 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('flex');
   };
 
+<<<<<<< HEAD
+const url = `https://script.google.com/macros/s/AKfycbz_fVuhlrKPD7NERctiv3MT4Ho7Qt0WzwT9m2J8IqEwOhRQ7bP27pgn57z-Oa9DjlRZyA/exec`;
+=======
   // Function to close modal
   const closeModal = () => {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
   };
+>>>>>>> 3bb778d6d45a9f72ddfe0ea2b3e915a1434fd86b
 
   // Close modal when clicking overlay
   overlay.addEventListener('click', closeModal);

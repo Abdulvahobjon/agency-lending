@@ -46,9 +46,17 @@ document.getElementById("form").addEventListener("submit", function (event) {
   const phone = document.getElementById("phone").value.trim();
   const business = document.getElementById("jop").value.trim();
   const jopIsue = document.getElementById("jopIsue").value.trim();
+
+  // Retrieve radio button value at submit
   const yes = document.querySelector("#yes");
   const no = document.querySelector("#no");
-  console.log(yes.value);
+  let radioValue = "";
+
+  if (yes.checked) {
+    radioValue = "Ha";
+  } else if (no.checked) {
+    radioValue = "Yo'q";
+  }
 
   let isValid = true;
   document
@@ -79,11 +87,6 @@ document.getElementById("form").addEventListener("submit", function (event) {
       "Iltimos, marketingdagi muammoingizni kiriting.";
     isValid = false;
   }
-  if (yes.value == true) {
-    document.querySelector(".error-message-radio").textContent =
-      "Ha yoki yo'qni tanlang";
-    isValid = false;
-  }
 
   if (isValid) {
     loader.classList.remove("hidden");
@@ -93,10 +96,11 @@ document.getElementById("form").addEventListener("submit", function (event) {
     data.append("Telefon", phone);
     data.append("Biznesingiz nomi", business);
     data.append("Marketingdagi sizni qiynayotgan muammo:", jopIsue);
+    data.append("Marketing agentligi bilan ishlaganmi", radioValue);
 
-    // Send data to Google Script
+
     fetch(
-      "https://script.google.com/macros/s/AKfycbwUM5goI_rbux99Ue0C1CX-CZ8kMrlrg9WeR-5AlOBDX8SsJKz9pUGBt4gTFCL4X-Np/exec",
+      "https://script.google.com/macros/s/AKfycbwjBFepkQLvi6vvq26OdS9ZxlhfTn_yCMDOHi2UFgAL2ppAZPDKkduzo9Cqq1UxhgBW7Q/exec",
       {
         method: "POST",
         body: data,
@@ -104,6 +108,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
     )
       .then((response) => response.json())
       .then((result) => {
+        console.log("Test: ", radioValue || "malumot kelmadi");
         console.log(result); // Log the response
         modal.classList.add("hidden");
         modal.classList.remove("flex");
