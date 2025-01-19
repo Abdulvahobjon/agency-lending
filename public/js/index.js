@@ -1,20 +1,78 @@
-const modal = document.querySelector(".modal");
-let btn = document.querySelector("#btn");
-const overlay = document.querySelector(".overlay");
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('.modal');
+  const closeButton = document.getElementById('close');
+  const overlay = document.querySelector('.overlay');
+  const btn = document.querySelector("#btn");
+  const url = `https://script.google.com/macros/s/AKfycbyKwNkLOENB0SXrnLHxQEQGfsDHCtiKm9MdxOkPruLtN9ykrcm2DigALfkXMv1fBKqcQA/exec`;
+  let player;
+  let intervalId = null;
+  let lastShownMinute = 0;
 
-overlay.addEventListener("click", function () {
-  modal.classList.add("hidden");
-  modal.classList.remove("flex");
-});
+  // Initialize AOS
+  if (typeof AOS !== 'undefined') {
+    AOS.init();
+  }
 
-btn.addEventListener("click", function () {
-  modal.classList.remove("hidden");
-  // modal.classList.add("flex")
-});
+  // Function to open modal
+  const openModal = () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  };
 
+<<<<<<< HEAD
 const url = `https://script.google.com/macros/s/AKfycbz_fVuhlrKPD7NERctiv3MT4Ho7Qt0WzwT9m2J8IqEwOhRQ7bP27pgn57z-Oa9DjlRZyA/exec`;
+=======
+  // Function to close modal
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  };
+>>>>>>> 3bb778d6d45a9f72ddfe0ea2b3e915a1434fd86b
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Close modal when clicking overlay
+  overlay.addEventListener('click', closeModal);
+
+  // Open modal when clicking button
+  btn.addEventListener('click', openModal);
+
+  // Close modal when clicking close button
+  closeButton.addEventListener('click', closeModal);
+
+  // Check video time to show modal every 5 minutes
+  const checkVideoTime = () => {
+    const currentTime = player.getCurrentTime();
+    const currentMinute = Math.floor(currentTime / 60);
+    if (currentMinute !== lastShownMinute && currentMinute % 5 === 0) {
+      openModal();
+      lastShownMinute = currentMinute;
+    }
+  };
+
+  // YouTube player initialization
+  const onYouTubeIframeAPIReady = () => {
+    player = new YT.Player('youtube-video', {
+      events: {
+        'onStateChange': (event) => {
+          if (event.data === YT.PlayerState.PLAYING) {
+            if (!intervalId) {
+              intervalId = setInterval(checkVideoTime, 1000);
+            }
+          } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+            clearInterval(intervalId);
+            intervalId = null;
+          }
+        }
+      }
+    });
+  };
+
+  // Load YouTube API script
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.body.appendChild(tag);
+  window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+  // Phone input formatting
   document.getElementById("phone").addEventListener("input", function (event) {
     let value = event.target.value.replace(/\D/g, ""); // Remove all non-digit characters
     let formatted = "";
@@ -52,19 +110,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Validate form inputs
     let isValid = true;
     if (!name) {
-      document.getElementById("name-error").textContent =
-        "Iltimos, ismingizni kiriting.";
+      document.getElementById("name-error").textContent = "Iltimos, ismingizni kiriting.";
       isValid = false;
     }
     const phonePattern = /^\(\d{2}\) \d{3}-\d{2}-\d{2}$/;
     if (!phone || !phonePattern.test(phone)) {
-      document.getElementById("phone-error").textContent =
-        "Telefon raqamingizni (88) 000-00-00 formatida kiriting.";
+      document.getElementById("phone-error").textContent = "Telefon raqamingizni (88) 000-00-00 formatida kiriting.";
       isValid = false;
     }
     if (!business) {
-      document.getElementById("jop-error").textContent =
-        "Iltimos, biznesingiz nomi va faoliyat sohasini kiriting.";
+      document.getElementById("jop-error").textContent = "Iltimos, biznesingiz nomi va faoliyat sohasini kiriting.";
       isValid = false;
     }
 
@@ -86,15 +141,13 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          modal.classList.add("hidden");
-          modal.classList.remove("flex");
+          closeModal();
           window.location = "https://asoschilar.uz/video.html";
           document.getElementById("form").reset();
         })
         .catch((error) => {
           console.error("Error:", error);
-          modal.classList.add("hidden");
-          modal.classList.remove("flex");
+          closeModal();
           alert("Xatolik yuz berdi, iltimos qayta urinib ko'ring.");
         })
         .finally(() => {
